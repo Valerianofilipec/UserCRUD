@@ -6,7 +6,7 @@ class User {
   admin: boolean = false;
   email: string;
   created_at: Date = new Date();
-  updated_at: Date;
+  updated_at: Date = new Date();
 
   constructor(){
     if(!this.id){
