@@ -12,7 +12,7 @@ class TurnUserAdminController {
       let user = this.turnUserAdminUseCase.execute(id);
     } catch (error) {
       if(error){
-        return response.status(400).json(error);
+        return response.status(404).json({error: error.message});
       }else{
         return response.json(user);
       }
