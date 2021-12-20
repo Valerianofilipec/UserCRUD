@@ -9,14 +9,14 @@ class ShowUserProfileController {
     const {id} = request.params;
 
     try {
-      this.showUserProfileUseCase.execute(id);
+      let user = this.showUserProfileUseCase.execute(id);
     } catch (error) {
       if(error){
         return response.status(400).json(error);
+      }else{
+        return response.json(user);
       }
     }
-
-    return response.json(user);
   }
 }
 
