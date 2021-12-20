@@ -17,8 +17,9 @@ class ListAllUsersUseCase {
         throw error;
       }
     }
-
-    return user;
+    if(user.admin){
+      return this.usersRepository.users;
+    }
   }
   
 }
