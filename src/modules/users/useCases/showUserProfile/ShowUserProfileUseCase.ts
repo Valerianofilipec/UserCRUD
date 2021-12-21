@@ -9,8 +9,9 @@ class ShowUserProfileUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
   execute({ user_id }: IRequest): User {
+    let user: User;
     try {
-      let user = this.usersRepository.findById(user_id);
+      user = this.usersRepository.findById(user_id);
     } catch (error) {
       if(error){
         throw error;
