@@ -12,12 +12,9 @@ class ShowUserProfileController {
     try {
       user = this.showUserProfileUseCase.execute({user_id});
     } catch (error) {
-      if(error){
-        return response.status(400).json(error);
-      }else{
-        return response.json(user);
-      }
+        return response.status(404).json({error: error.message});
     }
+    return response.json(user);
   }
 }
 
