@@ -94,7 +94,7 @@
                 }
             }
         },
-        "users/{user_id}/admin":{
+        "users/:user_id/admin":{
             "patch":{
                 "tags":["User"],
                 "summary": "Transformar em Admin",
